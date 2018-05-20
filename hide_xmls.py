@@ -1,3 +1,6 @@
+# For hiding XML files from Sony Cameras
+
+
 import os
 import sys
 
