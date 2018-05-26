@@ -1,7 +1,7 @@
 import os
 import sys
 
-if len(sys.argv) is not 2:
+if len(sys.argv) < 2:
     print ("Improper number of arguments.")
 
 else:
@@ -22,4 +22,7 @@ else:
             print ("To:")
             print ( os.path.join(root, "{}_{}".format(prefix,f)))
 
-            os.rename(os.path.join(root, f), os.path.join(root, "{}_{}".format(prefix, f)))
+
+            if "--dry" not in sys.argv:
+                print ("not a dry run")
+                os.rename(os.path.join(root, f), os.path.join(root, "{}_{}".format(prefix, f)))
